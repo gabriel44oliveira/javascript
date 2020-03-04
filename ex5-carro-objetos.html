@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="ACELERA AE" id="botao1" onclick="carro1.acelerar()">
+    <input type="button" value="DEVAGAAAAR" id="botao2" onclick="carro1.desacelerar()">
+    <script>
+        try {
+            function Carro(_marca, _anoFabricacao, _velocidadeMax, _velocidadeAtual = 0){
+                this.marca = _marca
+                this.anoFabricacao = _anoFabricacao
+                this.velocidadeMax = _velocidadeMax
+                this.velocidadeAtual = _velocidadeAtual
+            }
+            
+            Carro.prototype.acelerar = function(){
+                if (this.velocidadeAtual >= this.velocidadeMax){
+                    console.log("Você está na velocidade limite")
+                }
+                else {
+                    this.velocidadeAtual += 1
+                    console.log("Velocidade Atual: " + this.velocidadeAtual)
+                }
+            }
+            Carro.prototype.desacelerar = function(){
+                if (this.velocidadeAtual > 0){
+                    this.velocidadeAtual -= 1
+                    console.log("Velocidade Atual: " + this.velocidadeAtual)
+                }
+                else {
+                    console.log("Velocidade não pode ser negativa")
+                }
+            }
+            carro1 = new Carro("ford", "2010", 100)
+            // document.getElementById('botao1').addEventListener('click', carro1.acelerar())
+            // carro1.acelerar()
+            // carro1.acelerar()
+            // carro1.acelerar()
+            // carro1.acelerar()
+            // carro1.acelerar()
+            // carro1.desacelerar()
+            // carro1.desacelerar()
+            // carro1.desacelerar()
+            // carro1.desacelerar()
+            // carro1.desacelerar()
+            // carro1.desacelerar()
+        } catch (error) {
+            alert(error)
+        }    
+    </script>
+</body>
+</html>
